@@ -67,6 +67,7 @@ And Hit Ctrl+X and Ctrl+Y then run
     git clone https://github.com/hereismeaw/SenseCAPM1-Chirpstack.git
     
 **Configure LoRaWAN EUID Of WM1302/1303 Module**
+
 Due to Debian 12 The *GPIO sysfs* is deprecated and superseded by *libgpiod*. In this repo this is  my pre-compiled binary for RPi 4 for RPi OS Debian 12 based Works on WM1302 WM1303 module 
 
     cd SenseCAPM1-Chirpstack/packet_forwarder
@@ -236,3 +237,4 @@ ex.
 
 
 ## Made in Phatthalung, Thailand!!
+
