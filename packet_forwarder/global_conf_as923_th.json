@@ -79,8 +79,8 @@
     {
         "gateway_ID": "AA555A0000000000",       /* SenseCAP M1 Gateway EUI Read from SX1302/1303 Chip | BTW Users can change this if want to.*/
         "server_address": "localhost",          /* change with default server address hostname also supported! */
-        "serv_port_up": 17000,                  /* change with default server address/ports */
-        "serv_port_down": 17000,                /* change with default server address/ports */
+        "serv_port_up": 1700,                  /* change with default server address/ports */
+        "serv_port_down": 1700,                /* change with default server address/ports */
         "keepalive_interval": 10,               /* Time interval for downstream keep-alive packet (Second) */
         "stat_interval": 30,                    /* Time interval for statistics report to LNS (Second) */
         "push_timeout_ms": 100,
