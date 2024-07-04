@@ -241,3 +241,5 @@ ex.
 
 ## Made in Phatthalung, Thailand!!
 
+If you like my work, you can Buy me the Beer here
+buymeacoffee.com/thisismeaw
