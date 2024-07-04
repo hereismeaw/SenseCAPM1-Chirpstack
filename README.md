@@ -1,7 +1,7 @@
 ## You Lost your Helium Seed phrase
 **F**irst of all. I very hate to tell you but if you lost the seed phrase or Solana private key, that’s it. There is no recovery. The app is very clear about this during setup. that is why it comes with a card to write your phrase down on. Take care of your seed phrases next time.
 
-Read the RED BOX here: https://docs.helium.com/wallets/twelve-words/
+Read the YELLOW WARNING BOX here: https://docs.helium.com/wallets/wallet-seed-phrase
 
 
 Flash Raspberry Pi Image to Your SD Card with RPI Imager Download here
@@ -67,6 +67,7 @@ And Hit Ctrl+X and Ctrl+Y then run
     git clone https://github.com/hereismeaw/SenseCAPM1-Chirpstack.git
     
 **Configure LoRaWAN EUID Of WM1302/1303 Module**
+Due to Debian 12 The *GPIO sysfs* is deprecated and superseded by *libgpiod*. In this repo this is  my pre-compiled binary for RPi 4 for RPi OS Debian 12 based Works on WM1302 WM1303 module 
 
     cd SenseCAPM1-Chirpstack/packet_forwarder
     sudo chmod +x reset_lgw.sh && sudo chmod +x lora_pkt_fwd && sudo chmod +x spectral_scan
@@ -235,4 +236,3 @@ ex.
 
 
 ## Made in Phatthalung, Thailand!!
-
