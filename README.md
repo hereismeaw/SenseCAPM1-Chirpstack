@@ -6,7 +6,8 @@ Read the YELLOW WARNING BOX here: https://docs.helium.com/wallets/wallet-seed-ph
 
 Flash Raspberry Pi Image to Your SD Card with RPI Imager Download here
 https://www.raspberrypi.com/software/
-Install and run
+
+**Install and run it** 
 
 **Flash Your SD Card with Raspberry Pi Imager**
 Choose ***Raspberry Pi 4*** Board, 
