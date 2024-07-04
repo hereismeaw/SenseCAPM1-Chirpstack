@@ -23,6 +23,8 @@ Use your favorite SSH application on your PC such as Terminus, Putty etc. then C
 
 After Complete SSH Login
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oBwm2GigIec?si=DSOR6YUSEzHgeOXg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Configuration and Install
 
 **RPi Board Config** 
