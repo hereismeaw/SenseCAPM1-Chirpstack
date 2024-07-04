@@ -1,0 +1,60 @@
+{
+/* LoraWAN 2.4 GHz (Draft II) with 3 Channels Configuration for RAK5148 USB uses in Thailand Copyright SouthernIoT 2024 */
+/* Compatable with SenseCAP M1 both RPi4 and RPi 5 , DIY Hotspot with RAK 5148 */ 
+    "radio_conf": {
+        "tty_path": "/dev/ttyACM0",
+        "lorawan_public": true,
+        "antenna_gain": 0, /* antenna gain, in dBi */
+        "chan_0": {
+            "enable": true,
+            "freq": 2403000000, /* NBTC 2.403 GHz */
+            "bandwidth": 812000, /* 812 KHz Bandwidth */
+            "spread_factor": 12,
+            "rssi_offset": 0.0
+        },
+        "chan_1": { 
+            "enable": true,
+            "freq": 2479000000, /* NBTC 2.479 GHz */
+            "bandwidth": 812000, /* 812 KHz Bandwidth */
+            "spread_factor": 12,
+            "rssi_offset": 0.0
+        },
+        "chan_2": { 
+            "enable": true,
+            "freq": 2425000000, /* NBTC 2.425 GHz */
+            "bandwidth": 812000, /* 812 KHz Bandwidth */
+            "spread_factor": 12,
+            "rssi_offset": 0.0
+        },
+        "tx": {
+            "enable": true,
+            "tx_freq_min": 2400000000,
+            "tx_freq_max": 2483500000
+        }
+    },
+
+    "gateway_conf": {
+        "gateway_ID": "auto",         /* You Need To Register with The People Network Platform Manually! */
+        /* change with default server address/ports*/
+        "server_address": "localhost", /* For The People Network Firmware use localhost,  For DIY Hotspot use 100.109.80.23 */
+
+        "serv_port_up": 17000,   /*The People Network Firmware use port 17000 for DIY Hotspot use port 1700*/
+        "serv_port_down": 17000, /*The People Network Firmware use port 17000 for DIY Hotspot use port 1700*/
+
+        /* adjust the following parameters for your network */
+        "keepalive_interval": 10,
+        "stat_interval": 30,
+        "push_timeout_ms": 100,
+        /* forward only valid packets */
+        "forward_crc_valid": true,
+        "forward_crc_error": false,
+        "forward_crc_disabled": false
+    }
+}
+/* For Converting Sensecap M1 Hotspot from AS923 to 2.4 GHz freq run following cmd
+1. ssh to sensecap m1 and copy this file to /opt/sx1302_hal/packet_forwarder 
+2. sudo systemctl stop lora_pkt_fwd.service && sudo nano /etc/systemd/system/lora_pkt_fwd.service
+3. Edit following Line "ExecStart=/opt/packet_forwarder/lora_pkt_fwd -c /opt/packet_forwarder/global_conf.json" to "ExecStart=/opt/packet_forwarder/lora_pkt_fwd -c /opt/packet_forwarder/global_conf_2.4.json" without quotes 
+4. sudo systemctl daemon-reload && sudo systemctl start lora_pkt_fwd.service
+Copyright SouthernIoT 2024 */
+/* Time Wasted for This = 5410 hrs */

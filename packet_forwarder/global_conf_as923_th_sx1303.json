@@ -1,0 +1,154 @@
+{
+    "SX130x_conf": 
+        {
+            "com_type": "SPI",                                    /* Type of Connection SX1302/1303/1308 SPI or USB */
+            "com_path": "/dev/spidev0.0",                          /* Path of the SX1302/1303/1308 is connected on */
+            "lorawan_public": true,
+            "clksrc": 0,
+            "antenna_gain": 0,                                     /* Antenna gain, in dBi but Please Dont Change This, If You Want 50++ KM Coverage Go And Get Nice Antenna From RAK, RF-Explorer or DIY */
+            "full_duplex": false,                                  /* If You Want To Mine Helium, Crankk or ThingsIX then False, */
+            "fine_timestamp": 
+                {
+                    "enable": false,
+                    "mode": "all_sf"                                /* high_capacity or all_sf */
+                                        },
+
+            "sx1261_conf":                                          /* AS923 Spectral Scan Configuration SX1303 Module ONLY! Ex. Seeed WM1303, RAK5146 */
+                {
+                    "rssi_offset": 0,                               /* dB */
+                    "spectral_scan": 
+                        {
+                            "enable": false,            /* Enable for detect occupied bands and get interferer profiles for IoT Technician, It logs the histogram in a .csv file So User can Plotting the results by run plot_rssi_histogram.py */
+                            "freq_start": 922000000,
+                            "nb_chan": 8,
+                            "nb_scan": 2000,
+                            "pace_s": 10
+                                                    },
+                    "lbt":                                          /* AS923 LBT Configuration SX1303 Module ONLY! Ex. Seeed WM1303, RAK5146 */
+                    { 
+                        {
+                            "enable": true,                         /* Why false?? */
+                            "rssi_target": -80,                     /* dBm */
+                            "channels":                             /* 16 Channels Maximum But According To Thailand NBTC Use 8 Only Avoid LoRa Interferences */
+                                    [                                        
+                                    { "freq_hz": 920600000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 920800000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 921000000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 921200000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 921400000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 921600000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 921800000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 923200000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 },
+                                    { "freq_hz": 923400000, "bandwidth": 125000, "scan_time_us": 5000, "transmit_time_ms": 4000 }
+                                                                                                                                    ]
+                                                                                                                                        }
+                                                                                                                                            },
+
+            "radio_0": 
+                {
+                    "enable": true,                                     /* Why false?? */
+                    "type": "SX1250",                                   /* Type of LoRa Chip, Read the manual or Datasheets first */
+                    "freq": 922300000,                                  /* Main Frequency in hz */
+                    "rssi_offset": -215.4,
+                    "rssi_tcomp": {"coeff_a": 0, "coeff_b": 0, "coeff_c": 20.41, "coeff_d": 2162.56, "coeff_e": 0},
+                    "tx_enable": true,                                /* Why false?? */
+                    "tx_freq_min": 919000000,                          /* Minimum Tx Frequency in hz for Southnern IoT we Cover AS1 AS2 AS3 AS4 Freqency Plan */
+                    "tx_freq_max": 928000000,                          /* Maximum Tx Frequency in hz for Southnern IoT we Cover AS1 AS2 AS3 AS4 Freqency Plan */
+                    "tx_gain_lut":
+                                        /* --- RF Power Table --- */
+                        [
+                              {"rf_power": 12, "pa_gain": 1, "pwr_idx": 4},
+                              {"rf_power": 13, "pa_gain": 1, "pwr_idx": 5},
+                              {"rf_power": 14, "pa_gain": 1, "pwr_idx": 6},
+                              {"rf_power": 15, "pa_gain": 1, "pwr_idx": 7},
+                              {"rf_power": 16, "pa_gain": 1, "pwr_idx": 8},
+                              {"rf_power": 17, "pa_gain": 1, "pwr_idx": 9},
+                              {"rf_power": 18, "pa_gain": 1, "pwr_idx": 10},            /* pwr_idx : [0,22] = Possible gain settings from 0 (min. gain) to 22 (max. gain) */
+                              {"rf_power": 19, "pa_gain": 1, "pwr_idx": 11},            /* pa_gain : [0,1] =  PA Enable Corecell GW V1.0, 0 means PA bypassed, 1 means PA ON */
+                              {"rf_power": 20, "pa_gain": 1, "pwr_idx": 12},            /* rf_power = RF output power target in dBm */ 
+                              {"rf_power": 21, "pa_gain": 1, "pwr_idx": 13},            /* Within a Tx gain table index, the setting {pa_gain, pwr_idx} must correspond to the RF output power target defined in the parameter rf_power. */
+                              {"rf_power": 22, "pa_gain": 1, "pwr_idx": 14},
+                              {"rf_power": 23, "pa_gain": 1, "pwr_idx": 15},
+                              {"rf_power": 24, "pa_gain": 1, "pwr_idx": 16},
+                              {"rf_power": 25, "pa_gain": 1, "pwr_idx": 17},
+                              {"rf_power": 26, "pa_gain": 1, "pwr_idx": 19},
+                              {"rf_power": 27, "pa_gain": 1, "pwr_idx": 20}
+                              
+                                        /* --- RF Power Table --- */
+                                                                                ]
+                                                                                    },
+
+            "radio_1": 
+                {
+                    "enable": true,                             /* Why false?? */
+                    "type": "SX1250",                           /* Type of LoRa Chip, Read the manual or Datasheets first */
+                    "freq": 923100000,                          /* Sub Frequency in hz */
+                    "rssi_offset": -215.4,
+                    "rssi_tcomp": {"coeff_a": 0, "coeff_b": 0, "coeff_c": 20.41, "coeff_d": 2162.56, "coeff_e": 0},
+                    "tx_enable": false                          
+                                                                                                                    },
+
+            /* LoRa Demodulators Configurations */
+             
+                "chan_multiSF_All": {"spreading_factor_enable": [ 5, 6, 7, 8, 9, 10, 11, 12 ]},
+                "chan_multiSF_0": {"enable": true, "radio": 0, "if": -300000},
+                "chan_multiSF_1": {"enable": true, "radio": 0, "if": -100000},
+                "chan_multiSF_2": {"enable": true, "radio": 0, "if":  100000},
+                "chan_multiSF_3": {"enable": true, "radio": 0, "if":  300000},
+                "chan_multiSF_4": {"enable": true, "radio": 1, "if": -300000},
+                "chan_multiSF_5": {"enable": true, "radio": 1, "if": -100000},
+                "chan_multiSF_6": {"enable": true, "radio": 1, "if":  100000},
+                "chan_multiSF_7": {"enable": true, "radio": 1, "if":  300000},
+                "chan_Lora_std":  {"enable": true, "radio": 1, "if":  300000, "bandwidth": 500000, "spread_factor": 8,
+                "implicit_hdr": false, "implicit_payload_length": 17, "implicit_crc_en": false, "implicit_coderate": 1},
+                "chan_FSK":       {"enable": true, "radio": 1, "if":  300000, "bandwidth": 125000, "datarate": 50000}
+                                                                                                                                },
+/* LoRa HAL Parameters */
+
+"gateway_conf": 
+    {
+        "gateway_ID": "AA555A0000000000",       /* SenseCAP M1 Gateway EUI Read from SX1302/1303 Chip | BTW Users can change this if want to.*/
+        "server_address": "localhost",          /* change with default server address hostname also supported! */
+        "serv_port_up": 17000,                  /* change with default server address/ports */
+        "serv_port_down": 17000,                /* change with default server address/ports */
+        "keepalive_interval": 10,               /* Time interval for downstream keep-alive packet (Second) */
+        "stat_interval": 30,                    /* Time interval for statistics report to LNS (Second) */
+        "push_timeout_ms": 100,
+
+        /* forward only valid packets */
+        "forward_crc_valid": true,              /* Packets with PAYLOAD CRC OK are forwarded */
+        "forward_crc_error": false,             /* Packets with PAYLOAD CRC ERROR are NOT forwarded */
+        "forward_crc_disabled": false,          /* Packets with NO PAYLOAD CRC are NOT forwarded */
+
+        /* GPS configuration */
+        "gps_tty_path": "/dev/i2c-1",           /* Path of the TTY port GPS is connected on */
+        "gps_enabled": false,                   /* Due to SenseCAM M1 Has no Built In GPS, Enable this if you want turn-on Class-B Station */
+        "fake_gps": false,                      /* Due to SenseCAM M1 Has no Built In GPS, Enable this if you want turn-on Class-B Station */
+
+        /* If Fake GPS = True, then Set GPS coordinates for Class-B Beacon */
+        "ref_latitude": 0.0,
+        "ref_longitude": 0.0,
+        "ref_altitude": 0,
+
+        /* LoRaWAN Class-B Beaconing configurations */
+        "beacon_period": 0,                     /* 0=disable class B beacon, >=6  = On Beacon (per Sec) | Must be a sub-multiple of 86400, the nb of sec in a day */
+        "beacon_freq_hz": 923400000,            /* Beacon Frequency in Hz */
+        "beacon_datarate": 9,                   /* Beacon Datarate (SF) */
+        "beacon_bw_hz": 125000,                 /* Beacon Bandwidth in Hz */
+        "beacon_power": 26,                     /* Beacon Tx Power in dBm */
+        "beacon_infodesc": 0                    /* Beacon information descriptor | SenseCAP M1 Has Only One Antenna | 0= GPS Value of 1st Antenna, 1= GPS Value of 2nd Antenna, 2= GPS Value of 3rd Antenna */
+                                            },
+
+"debug_conf": 
+    {
+        "ref_payload":
+            [
+                {"id": "0xCAFE1234"},
+                {"id": "0xCAFE2345"}
+                                        ],
+"log_file": "loragw_hal.log"
+                                            }
+                                                                                                                                        }
+                                                                                                                                                    }
+/* Copyrighted 2024 Southern IoT */
+/* Time Wasted for This = 5410 hrs */

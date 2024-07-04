@@ -1,0 +1,28 @@
+[general]
+# debug=5, info=4, warning=3, error=2, fatal=1, panic=0
+log_level=4
+
+[packet_multiplexer]
+bind="0.0.0.0:17000"
+
+[[packet_multiplexer.backend]]
+# Chirpstack
+host="localhost:1700"
+uplink_only=false
+# The Gateway IDs to forward data for.
+gateway_ids = 
+	[
+  		"0101010101010101",
+  		"0202020202020202",
+	]
+
+[[packet_multiplexer.backend]]
+# TTN Australia 
+host="au1.cloud.thethings.network:1700"
+uplink_only=false
+# The Gateway IDs to forward data for.
+gateway_ids = 
+	[
+  		"0101010101010101",
+  		"0202020202020202",
+	]
