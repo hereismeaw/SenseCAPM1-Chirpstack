@@ -103,7 +103,7 @@ Fill your *"Concentrator EUI"*  And Hit Ctrl+X and Ctrl+Y
 Copy And Paste Following Line 
 
     [Unit]
-    Description=Southern IoT AS923 LoraWAN Packet Forwarder Version 01.07.2024 Copyrighted
+    Description=Southern IoT AS923 LoraWAN Packet Forwarder Version 01.07.2024
     After=network-online.target
     Wants=network-online.target
     [Service]
