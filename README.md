@@ -1,7 +1,14 @@
-## You Lost your Helium Seed phrase But your SenseCAP M1 Can do more
+## You Lost your Helium Seed phrase
 **F**irst of all. I very hate to tell you but if you lost the seed phrase or Solana private key, that’s it. There is no recovery. The app is very clear about this during setup. that is why it comes with a card to write your phrase down on. Take care of your seed phrases next time.
 
 Read the YELLOW WARNING BOX here: https://docs.helium.com/wallets/wallet-seed-phrase
+
+Requirements 
+1. Lost Key SenseCAP M1 
+2. Basic Linux Command Line 
+3. Micro SD Card Reader 
+4. Good Performance SD Card
+5. Time
 
 
 Flash Raspberry Pi Image to Your SD Card with RPI Imager Download here
@@ -22,8 +29,6 @@ Use your favorite SSH application on your PC such as Terminus, Putty etc. then C
 
 
 After Complete SSH Login
-
-Videos: https://www.youtube.com/watch?v=oBwm2GigIec
 
 ## Configuration and Install
 
@@ -103,7 +108,7 @@ Fill your *"Concentrator EUI"*  And Hit Ctrl+X and Ctrl+Y
 Copy And Paste Following Line 
 
     [Unit]
-    Description=Southern IoT AS923 LoraWAN Packet Forwarder Version 01.07.2024
+    Description=Southern IoT AS923 LoraWAN Packet Forwarder Version 01.07.2024 Copyrighted
     After=network-online.target
     Wants=network-online.target
     [Service]
@@ -239,7 +244,5 @@ ex.
 > 192.168.1.69:4449
 
 
-## Made in Phatthalung, Thailand!!
+## Made in Phatthalung, Thailand.
 
-If you like my work, you can Buy me the Beer here
-https://buymeacoffee.com/thisismeaw
