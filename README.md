@@ -1,4 +1,4 @@
-## You Lost your Helium Seed phrase
+## You Lost your Helium Seed phrase But your SenseCAP M1 Can do more
 **F**irst of all. I very hate to tell you but if you lost the seed phrase or Solana private key, that’s it. There is no recovery. The app is very clear about this during setup. that is why it comes with a card to write your phrase down on. Take care of your seed phrases next time.
 
 Read the YELLOW WARNING BOX here: https://docs.helium.com/wallets/wallet-seed-phrase
