@@ -218,8 +218,9 @@ sudo echo "deb https://artifacts.chirpstack.io/packages/3.x/deb stable main" | s
 sudo apt update && sudo apt install chirpstack-packet-multiplexer
 ```
 
-To complete the installation, update the configuration file which is located at 
+To complete the installation, Make directory and update the configuration file which is located at 
 
+> sudo mkdir /etc/chirpstack-packet-multiplexer
 > /etc/chirpstack-packet-multiplexer/chirpstack-packet-multiplexer.toml
 
 The Configuration Template I provided in this repo.
